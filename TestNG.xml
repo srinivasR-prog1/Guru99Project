@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Guru99Bank">
+  <listeners>
+  
+   <listener class-name="com.guru99.utilities.Reporting"/>
+  
+  </listeners>
+	<test name="Guru99Banking Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.guru99.testCases.TC_loginDDT_001" />
+		</classes>
+	</test>
+
+</suite>

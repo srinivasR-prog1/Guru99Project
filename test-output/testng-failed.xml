@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Guru99Bank]">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="com.guru99.utilities.Reporting"/>
+  </listeners>
+  <test name="Guru99Banking Test">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.guru99.testCases.TC_loginDDT_001"/>
+    </classes>
+  </test> <!-- Guru99Banking Test -->
+  <test name="Guru99Banking Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.guru99.testCases.TC_loginDDT_001">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="loginDDT" invocation-numbers="1 3 4"/>
+        </methods>
+      </class> <!-- com.guru99.testCases.TC_loginDDT_001 -->
+    </classes>
+  </test> <!-- Guru99Banking Test(failed) -->
+</suite> <!-- Failed suite [Guru99Bank] -->
