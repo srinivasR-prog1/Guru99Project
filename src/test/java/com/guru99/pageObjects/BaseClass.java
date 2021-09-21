@@ -18,6 +18,8 @@ import org.testng.annotations.Parameters;
 
 import com.guru99.utilities.ReadConfig;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BaseClass {
 
 	ReadConfig readConfig = new ReadConfig();
@@ -37,10 +39,12 @@ public class BaseClass {
 
 		if (br.equals("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", readConfig.getChromePath());
+		//	System.setProperty("webdriver.chrome.driver", readConfig.getChromePath());
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (br.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", readConfig.getFirefoxpath());
+	//		System.setProperty("webdriver.gecko.driver", readConfig.getFirefoxpath());
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 
 		}
